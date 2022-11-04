@@ -1,0 +1,52 @@
+1a5696ee-dd1f-4cc8-9f5f-e713316c38da Error: Not allow by CORS 2022/10/30 18:56:42
+
+e8c86b7f-1843-473e-894e-c3e04d8a837e Error: Not allow by CORS 2022/10/30 18:56:42
+
+3ffda04c-7cce-4b68-b7de-f3a5377616e3 TypeError: data.push is not a function 2022/11/01 00:46:54
+
+e93c6a03-8b0f-4a35-be68-20d6877a57d9 ReferenceError: data is not defined 2022/11/01 00:57:47
+
+2354ae18-8555-4128-9f3e-117d7be94664 SyntaxError: Unexpected token i in JSON at position 6 2022/11/01 18:44:13
+
+c9508399-1b89-49f0-b4d2-200aa939c6bc TypeError: data.employees.find is not a function 2022/11/01 18:44:44
+
+016073de-f82c-4ada-94b4-514c11bc9282 TypeError: data.employees.find is not a function 2022/11/01 18:45:00
+
+32d33a70-2763-4607-b257-909d97eee07e TypeError: data.employees.find is not a function 2022/11/01 18:45:02
+
+22f66565-788a-4277-aeab-0704e86e763e TypeError: data.employees.find is not a function 2022/11/01 18:46:12
+
+d01e23e7-7c45-41e5-b15c-6050b07079a0 TypeError: Cannot set properties of undefined (setting 'employees') 2022/11/01 18:52:51
+
+ccb2499a-2c66-4308-b5ea-36a3e31fa7ba TypeError: Cannot set properties of undefined (setting 'employees') 2022/11/01 18:54:58
+
+6512beeb-063b-441b-bedf-c993d9949aba TypeError: Cannot read properties of undefined (reading 'id') 2022/11/01 18:59:03
+
+d2cdafcb-8997-4f06-bb90-512c74581a3d TypeError: Cannot set properties of undefined (setting 'employees') 2022/11/01 19:01:37
+
+b7e4d316-f168-4fd5-9f5e-4046626eb945 TypeError: Cannot set properties of undefined (setting 'employees') 2022/11/01 19:02:31
+
+8ce2e60c-589f-4bef-8974-a0270b24df19 TypeError: data.setEmployee is not a function 2022/11/01 19:04:24
+
+8856f535-9683-4833-b6eb-a06e31d26599 TypeError: data.setEmployee is not a function 2022/11/01 19:04:57
+
+aee73efa-bf91-4699-87e3-cc4cbe93847f TypeError: data.setEmployees is not a function 2022/11/01 19:09:26
+
+2a588f73-c081-4811-a77c-3e1b03be252d TypeError: data.setEmployees is not a function 2022/11/01 19:10:57
+
+c6baf673-c262-46c8-9106-0a866dde55f0 ReferenceError: rreq is not defined 2022/11/01 19:15:13
+
+d57eab87-94d1-45a2-b574-19665ae42815 ReferenceError: rreq is not defined 2022/11/01 19:15:19
+
+7b0685cb-5efc-4a6a-98e6-16e01ebd6043 ReferenceError: rreq is not defined 2022/11/01 19:15:22
+
+ef768799-fea9-4d61-8398-cdf2b5b7e548 ReferenceError: rreq is not defined 2022/11/01 19:16:15
+
+43726244-b3eb-455e-bfe4-192c873d15e4 ReferenceError: rreq is not defined 2022/11/01 19:16:32
+
+f7fad661-215d-4a91-be5d-778b293cd7a5 SyntaxError: Unexpected token f in JSON at position 6 2022/11/04 15:40:22
+
+2b26c82c-101f-4ebd-87c2-259e43e4f1e0 SyntaxError: Unexpected token f in JSON at position 6 2022/11/04 15:40:37
+
+407be024-fbe8-452f-a765-ac523684b0b5 SyntaxError: Unexpected token f in JSON at position 6 2022/11/04 15:40:52
+
