@@ -1,21 +1,22 @@
-import { default as datas } from "../model/users.json" assert { type: "json" };
-import fs from "fs";
-import path from "path";
+// import { default as datas } from "../model/users.json" assert { type: "json" };
+// import fs from "fs";
+// import path from "path";
+import mongooseUserSchema from "../model/User.js";
 import bcrypt from "bcrypt";
 import Jwt from "jsonwebtoken";
-import dotenv from "dotenv";
-import { fileURLToPath } from "url";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-dotenv.config();
-const fspromises = fs.promises;
 
-let UserDb = {
-  users: datas,
-  setUsers: function (data) {
-    this.users = data;
-  },
-};
+// import { fileURLToPath } from "url";
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+
+// const fspromises = fs.promises;
+
+// let UserDb = {
+//   users: datas,
+//   setUsers: function (data) {
+//     this.users = data;
+//   },
+// };
 
 const handlelogin = async (req, res) => {
   const { user, pwd } = req.body;
@@ -25,7 +26,7 @@ const handlelogin = async (req, res) => {
       .status(400)
       .json({ message: "Username and password are required." });
 
-  const foundUser = datas.find((data) => data.username === user);
+  const foundUser = await mongooseUserSchema.findOne({ username: user }).exec();
   if (!foundUser) {
     return res.status(401).json({ message: "UserName is not in Db" });
   } else {
@@ -47,20 +48,23 @@ const handlelogin = async (req, res) => {
         process.env.REFRESH_TOKEN_SECRIT,
         { expiresIn: "1d" }
       );
-      const otherUsers = datas.filter(
-        (person) => person.username !== foundUser.username
-      );
-      const currentUser = { ...foundUser, refreshToken };
-      UserDb.setUsers([...otherUsers, currentUser]);
-      await fspromises.writeFile(
-        path.join(__dirname, "..", "model", "users.json"),
-        JSON.stringify(UserDb.users)
-      );
+      foundUser.refreshToken = refreshToken;
+      const result = foundUser.save();
+
+      // const otherUsers = datas.filter(
+      //   (person) => person.username !== foundUser.username
+      // );
+      // const currentUser = { ...foundUser, refreshToken };
+      // UserDb.setUsers([...otherUsers, currentUser]);
+      // await fspromises.writeFile(
+      //   path.join(__dirname, "..", "model", "users.json"),
+      //   JSON.stringify(UserDb.users)
+      // );
       res.cookie("jwt", refreshToken, {
         httpOnly: true,
         sameSite: "None",
         maxAge: 24 * 60 * 60 * 1000,
-        secure: true,
+        // secure: true,
       });
       return res.json({ accessToken: accessToken });
     } else {

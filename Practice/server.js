@@ -16,6 +16,12 @@ import cookieParser from "cookie-parser";
 import refreshRouter from "./routes/refresh.js";
 import logOutRouter from "./routes/logout.js";
 import credentials from "./middleware/credentials.js";
+import mongoose from "mongoose";
+import connectDb from "./Config/dbConn.js";
+// import dotenv from "dotenv";
+
+// dotenv.config();
+connectDb();
 const PORT = process.env.PORT || 3500;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -57,4 +63,9 @@ server.get("*", (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
 });
 server.use(errorHandler);
-server.listen(PORT, () => console.log(`server is on http://localhost:${PORT}`));
+mongoose.connection.once("open", () => {
+  console.log("Connect to mongoDb");
+  server.listen(PORT, () =>
+    console.log(`server is on http://localhost:${PORT}`)
+  );
+});
